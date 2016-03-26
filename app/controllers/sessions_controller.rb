@@ -8,10 +8,10 @@ class SessionsController < ApplicationController
       redirect_to chefs_path
     elsif user && user.authenticate(params[:password]) && user.employee_type == "Server"
       session[:current_user_id] = user.id
-      redirect_to server_path
+      redirect_to servers_path
     elsif user && user.authenticate(params[:password]) && user.employee_type == "Admin"
       session[:current_user_id] = user.id
-      redirect_to admin_path
+      redirect_to admins_path
     end
 end
 

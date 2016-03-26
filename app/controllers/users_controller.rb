@@ -10,11 +10,11 @@ class UsersController < ApplicationController
     if @user.save
       session[:current_user_id] = @user.id
       if @user.employee_type == "Admin"
-        redirect_to fooditems_path
+        redirect_to admins_path
       elsif @user.employee_type == "Server"
-        redirect_to tables_path
+        redirect_to servers_path
       else
-        redirect_to root_path
+        redirect_to chefs_path
       end
     end
   end
@@ -22,11 +22,11 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     if @user.employee_type == "Admin"
-      redirect_to fooditems_path
+      redirect_to admins_path
     elsif @user.employee_type == "Server"
-      redirect_to tables_path
+      redirect_to servers_path
     else
-      redirect_to root_path
+      redirect_to chefs_path
     end
   end
 

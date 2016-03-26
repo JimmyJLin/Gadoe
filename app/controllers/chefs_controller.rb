@@ -1,5 +1,5 @@
 class ChefsController < ApplicationController
   def index
-    @greeting = "Hello chef"
+    @greeting = "Hello Chef"
   end
 end
