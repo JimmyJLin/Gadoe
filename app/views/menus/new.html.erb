@@ -1,0 +1,19 @@
+<div class="form">
+<h1>Add Menu Items</h1>
+  <%= form_for :menu, :url => menus_path, :html => {:method => :post} do |f| %>
+  <%= f.label :name%><br>
+  <%= f.text_field :name%><br>
+  <%= f.label :cuisine%><br>
+  <%= f.text_field :cuisine%><br>
+  <%= f.label :price %><br>
+  <%= f.text_field :price %><br>
+  <%= f.label :peanuts %><br>
+  <%= f.check_box(:peanuts, {}, "True", "False") %><br>
+  <%= f.label :gluent %><br>
+  <%= f.check_box(:gluent, {}, "True", "False") %><br>
+  <%= f.label :dairy %><br>
+  <%= f.check_box(:dairy, {}, "True", "False") %><br>
+  <br>
+  <%= f.submit "Add Item"%><br>
+  <% end %>
+</div>

@@ -10,6 +10,10 @@ Rails.application.routes.draw do
   resources :admins
   resources :servers
 
+  resources :menus
+  resources :tables
+  resources :join_table
+
   get 'sessions/new' => 'sessions#new'
   post 'sessions' => 'sessions#create'
   delete 'sessions' => 'sessions#destroy'
