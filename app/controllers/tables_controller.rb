@@ -7,7 +7,7 @@ class TablesController < ApplicationController
   def create
     @table = Table.new(table_params)
     @table.save
-    redirect_to order_path(@table)
+    redirect_to tables_path(@table)
   end
 
   def show
@@ -21,7 +21,7 @@ class TablesController < ApplicationController
   def update
     @table = Table.find(params[:id])
     @table.update(table_params)
-    redirect_to orders_path
+    redirect_to tables_path
   end
 
   def destroy

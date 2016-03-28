@@ -1,38 +1,42 @@
 class OrdersController < ApplicationController
 
 def new
-  @table = Table.new
+  @menu = Menu.all
+  @order = Order.new
 end
 
 def create
-  @table = Table.new(table_params)
-  @table.save
-  redirect_to order_path(@table)
+  @order = Order.new(order_params)
+  @order.save
+  redirect_to order_path(@order)
 end
 
 def show
-  @table = Table.find(params[:id])
+  @order = Order.find(params[:id])
+  @orders = Order.all
+  @menu = Menu.all
+  @table = Table.all
 end
 
 def edit
-  @table = Table.find(params[:id])
+  @order = Order.find(params[:id])
 end
 
 def update
-  @table = Table.find(params[:id])
-  @table.update(table_params)
+  @order = Order.find(params[:id])
+  @order.update(order_params)
   redirect_to orders_path
 end
 
 def destroy
-  @table = Table.find(params[:id])
-  @table.destroy
+  @order = Order.find(params[:id])
+  @order.destroy
 end
 
 private
 
-def table_params
-  params.require(:table).permit(:table_num, :guests, :paid)
+def order_params
+  params.require(:order).permit(:party_id, :menu_id, :user_id)
 end
 
 end

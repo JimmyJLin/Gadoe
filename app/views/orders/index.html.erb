@@ -1,17 +1,18 @@
-
 <div>
-<h2>Current Parties</h2>
+<h1> Show Orders</h1>
 <table>
   <tr>
-    <th>Table Number</th>
-    <th># of Guests</th>
+    <th>Menu ID</th>
+    <th>Party ID</th>
   </tr>
   <tr>
-    <td><%= table.table_num %></td>
-    <td><%= table.guests %></td>
-    <td><button><%= link_to "Delete", tables_path(table) %></button></td>
-    <td><button><%= link_to "Edit", edit_table_path(table) %></button></td>
+    <!-- <%= Order.all.each do |order| %> -->
+    <td><%= order.menu_id %></td>
+    <td><%= order.party_id %></td>
+    <td><button><%= link_to "Delete", order_path(order) %></button></td>
+    <td><button><%= link_to "Edit", edit_order_path(order) %></button></td>
 
   </tr>
+  <!-- <% end %> -->
 </table>
 </div>
