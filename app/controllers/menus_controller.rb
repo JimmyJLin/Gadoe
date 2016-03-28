@@ -6,15 +6,28 @@ class MenusController < ApplicationController
 
   def create
     @menu = Menu.new(order_params)
-    if @menu.save
-      redirect_to menus_path
-    else
-      redirect_to root_path
-    end
+    @menu.save
+      redirect_to menu_path(@menu)
   end
 
   def show
-    @menu
+    @menu = Menu.find(params[:id])
+  end
+
+  def edit
+    @menu = Menu.find(params[:id])
+  end
+
+  def update
+    @menu = Menu.find(params[:id])
+    @menu.update(order_params)
+    redirect_to menus_path
+  end
+
+  def destroy
+    @menu = Menu.find(params[:id])
+    @menu.destroy
+    # redirect_to root_path
   end
 
   private

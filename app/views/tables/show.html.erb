@@ -1,0 +1,17 @@
+
+<div>
+<h2>Current Parties</h2>
+<table>
+  <tr>
+    <th>Table Number</th>
+    <th># of Guests</th>
+  </tr>
+  <tr>
+
+    <td><%= @table.table_num %></td>
+    <td><%= @table.guests %></td>
+    <td><button><%= link_to "Delete", table_path(@table), method: :delete %></button></td>
+  </tr>
+
+</table>
+</div>

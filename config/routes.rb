@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   resources :menus
   resources :tables
-  resources :join_table
+  resources :orders
 
   get 'sessions/new' => 'sessions#new'
   post 'sessions' => 'sessions#create'

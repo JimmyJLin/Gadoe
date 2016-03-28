@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160326173230) do
+ActiveRecord::Schema.define(version: 20160328130859) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,14 @@ ActiveRecord::Schema.define(version: 20160326173230) do
 
   add_index "menus_tables", ["menu_id", "table_id"], name: "index_menus_tables_on_menu_id_and_table_id", using: :btree
   add_index "menus_tables", ["table_id", "menu_id"], name: "index_menus_tables_on_table_id_and_menu_id", using: :btree
+
+  create_table "orders", force: :cascade do |t|
+    t.integer  "menu_id"
+    t.integer  "party_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "completed"
+  end
 
   create_table "tables", force: :cascade do |t|
     t.integer  "table_num"
