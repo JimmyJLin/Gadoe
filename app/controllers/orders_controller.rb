@@ -1,5 +1,9 @@
 class OrdersController < ApplicationController
 
+def index
+  @tables = Table.all
+end
+
 def new
   @menu = Menu.all
   @order = Order.new
@@ -15,7 +19,7 @@ def show
   @order = Order.find(params[:id])
   @orders = Order.all
   @menu = Menu.all
-  @table = Table.all
+  @tables = Table.all
 end
 
 def edit
@@ -36,7 +40,7 @@ end
 private
 
 def order_params
-  params.require(:order).permit(:party_id, :menu_id, :user_id)
+  params.require(:order).permit(:table_id, :menu_id)
 end
 
 end

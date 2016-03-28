@@ -32,7 +32,7 @@ class TablesController < ApplicationController
   private
 
   def table_params
-    params.require(:table).permit(:table_num, :guests, :paid)
+    params.require(:table).permit(:table_num, :guests)
   end
 
 

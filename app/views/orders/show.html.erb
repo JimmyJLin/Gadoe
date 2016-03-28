@@ -1,0 +1,15 @@
+<div>
+<h1> Show Orders</h1>
+<table>
+  <tr>
+    <th>Menu ID</th>
+    <th>Party ID</th>
+  </tr>
+  <tr>
+    <td><%= @order.menu_id %></td>
+    <td><%= @order.table_id %></td>
+    <td><button><%= link_to "Delete", order_path(@order), method: :delete %></button></td>
+
+  </tr>
+</table>
+</div>
